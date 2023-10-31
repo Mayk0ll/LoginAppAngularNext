@@ -1,0 +1,26 @@
+<div class="wrapper">
+  <form class="body" (ngSubmit)="onSubmit()" [formGroup]="myForm">
+    <img class="logo" src="../../../assets//images//login.png" alt="login">
+    <h4>Registrar Usuario</h4>
+    <div class="mb-3 mt-3">
+      <input type="text" class="form-control" placeholder="Ingrese su usuario" formControlName="username">
+      <span *ngIf="isValidField('username')" class="form-text text-danger">{{ getFieldError('username') }}</span>
+    </div>
+
+    <div class="mb-3">
+      <input type="password" class="form-control" placeholder="Crea tu contraseña" formControlName="password">
+      <span *ngIf="isValidField('password')" class="form-text text-danger">{{ getFieldError('password') }}</span>
+    </div>
+    <div class="mb-3">
+      <input type="password" class="form-control" placeholder="Repite tu contraseña" formControlName="password2">
+      <span *ngIf="isValidField('password2')" class="form-text text-danger">{{ getFieldError('password2') }}</span>
+    </div>
+
+    <div class="d-grid">
+      <button type="submit" class="btn btn-primary btn-lg">Aceptar</button>
+    </div>
+
+    <p class="mt-3">Ya tienes cuenta? <a routerLink="/login">volver</a></p>
+  </form>
+</div>
+
